@@ -14,13 +14,13 @@ namespace Store
 
     class Human
     {
+        protected List<Product> Products;
+
         public Human(List<Product> products, int money)
         {
             Products = products;
             Money = money;
         }       
-
-        protected List<Product> Products;
 
         public int Money { get; protected set; }
 
@@ -46,18 +46,6 @@ namespace Store
         public Seller(List<Product> products, int money = 0) : base(products, money)
         {
             FillListOfProducts(products);
-        }
-
-        private void FillListOfProducts(List<Product> products)
-        {
-            products.Add(new Product("Ковер самолет", 2000));
-            products.Add(new Product("Зелье невидимости", 225));
-            products.Add(new Product("Рог с медом", 250));
-            products.Add(new Product("Копье Драупнира", 1750));
-            products.Add(new Product("Сыр", 50));
-            products.Add(new Product("Колбаса", 70));
-            products.Add(new Product("Хлеб", 40));
-            products.Add(new Product("Бочка с элем", 300));
         }
 
         public bool TryGetProduct(out Product product)
@@ -86,6 +74,18 @@ namespace Store
         {
             Products.Remove(product);
             Money += product.Cost;
+        }
+
+        private void FillListOfProducts(List<Product> products)
+        {
+            products.Add(new Product("Ковер самолет", 2000));
+            products.Add(new Product("Зелье невидимости", 225));
+            products.Add(new Product("Рог с медом", 250));
+            products.Add(new Product("Копье Драупнира", 1750));
+            products.Add(new Product("Сыр", 50));
+            products.Add(new Product("Колбаса", 70));
+            products.Add(new Product("Хлеб", 40));
+            products.Add(new Product("Бочка с элем", 300));
         }
     }
 
