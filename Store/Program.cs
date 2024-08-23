@@ -14,13 +14,13 @@ namespace Store
 
     class Human
     {
-        protected List<Product> Products;
-
         public Human(List<Product> products, int money)
         {
             Products = products;
             Money = money;
-        }
+        }       
+
+        protected List<Product> Products;
 
         public int Money { get; protected set; }
 
