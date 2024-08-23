@@ -7,7 +7,7 @@ namespace Store
     {
         static void Main(string[] args)
         {
-            Shopping shopping = new Shopping();
+            Shop shopping = new Shop();
             shopping.StartShopping();
         }
     }
@@ -109,7 +109,7 @@ namespace Store
     {
         public Product(string name, int cost)
         {
-            this.Name = name;
+            Name = name;
             Cost = cost;
         }
 
@@ -117,7 +117,7 @@ namespace Store
         public int Cost { get; private set; }
     }
 
-    class Shopping
+    class Shop
     {
         public void StartShopping()
         {
